@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+remote_name="$1"
+remote_url="$2"
+protected_branches=(main master)
+
+is_protected_branch() {
+  local branch="$1"
+  local protected
+  for protected in "${protected_branches[@]}"; do
+    if [[ "$branch" == "$protected" ]]; then
+      return 0
+    fi
+  done
+  return 1
+}
+
+while read -r local_ref local_sha remote_ref remote_sha; do
+  branch="${remote_ref#refs/heads/}"
+
+  if is_protected_branch "$branch"; then
+    cat >&2 <<EOF
+Blocked: direct pushes to '$branch' are not allowed.
+Create a feature branch and open a pull request instead.
+EOF
+    exit 1
+  fi
+
+  if [[ "$remote_ref" == refs/heads/* ]] &&
+    [[ ! "$local_sha" =~ ^0+$ ]] &&
+    [[ ! "$remote_sha" =~ ^0+$ ]] &&
+    git cat-file -e "${remote_sha}^{commit}" 2>/dev/null &&
+    ! git merge-base --is-ancestor "$remote_sha" "$local_sha"; then
+    cat >&2 <<EOF
+Blocked: this push is not a fast-forward update of '$branch'.
+Fetch the branch and use the GitHub pull-request workflow; do not force-push.
+EOF
+    exit 1
+  fi
+done
+
+exit 0

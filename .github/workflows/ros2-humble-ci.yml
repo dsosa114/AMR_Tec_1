@@ -1,0 +1,48 @@
+name: ROS 2 Humble CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+concurrency:
+  group: ros2-humble-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-22.04
+    container:
+      image: ros:humble-ros-base-jammy
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Prepare ROS workspace
+        run: |
+          mkdir -p /tmp/amr_tec_1_ws/src
+          cp -a . /tmp/amr_tec_1_ws/src/amr_tec_1
+
+      - name: Install build tools and package dependencies
+        run: |
+          apt-get update
+          apt-get install -y python3-colcon-common-extensions python3-rosdep
+          rosdep init
+          rosdep update
+          . /opt/ros/humble/setup.sh
+          rosdep install --from-paths /tmp/amr_tec_1_ws/src --ignore-src --rosdistro humble -r -y
+
+      - name: Build workspace
+        working-directory: /tmp/amr_tec_1_ws
+        run: |
+          . /opt/ros/humble/setup.sh
+          colcon build --event-handlers console_direct+
+
+      - name: Test workspace
+        working-directory: /tmp/amr_tec_1_ws
+        run: |
+          . /opt/ros/humble/setup.sh
+          colcon test --event-handlers console_direct+
+          colcon test-result --verbose

@@ -1,0 +1,25 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/daniel/Workspaces/interbotix_ws/install/interbotix_xs_msgs/include/**",
+        "/opt/ros/jazzy/include/**",
+        "/home/daniel/Workspaces/amr_tec_1_ws/src/amr_bringup/include/**",
+        "/home/daniel/Workspaces/amr_tec_1_ws/src/amr_description/include/**",
+        "/home/daniel/Workspaces/amr_tec_1_ws/src/amr_hardware/include/**",
+        "/home/daniel/Workspaces/amr_tec_1_ws/src/amr_interfaces/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ros2",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++17"
+    }
+  ],
+  "version": 4
+}

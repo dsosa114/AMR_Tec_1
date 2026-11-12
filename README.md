@@ -33,3 +33,7 @@ The packages are currently structural scaffolds. Add a dependency to both a pack
 ## Platform compatibility
 
 The Jetson deployment target uses ROS 2 Humble, while development hosts may use ROS 2 Jazzy. Follow the [development-environment guide](docs/development-environments.md) for the compatibility policy, pinned external source import, released sensor/localization dependencies, and validation matrix.
+
+## Contributor workflow
+
+Use the beginner-safe [Git workflow](docs/git-workflow.md) and [quick reference](docs/quick-reference.md) for feature branches, pull requests, visual tools, and safe recovery. Maintainers should configure the protected-branch settings in [repository administration](docs/repository-administration.md).

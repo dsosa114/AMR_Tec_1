@@ -1,0 +1,14 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "AMR: Set up workspace",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "${workspaceFolder}/scripts/setup-workspace.sh"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
