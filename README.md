@@ -40,3 +40,4 @@ Use the beginner-safe [Git workflow](docs/git-workflow.md) and [quick reference]
 
 ## Repository Rules Test
 I am the robot
+I am the developer machine
