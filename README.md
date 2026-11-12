@@ -39,3 +39,4 @@ The Jetson deployment target uses ROS 2 Humble, while development hosts may use 
 Use the beginner-safe [Git workflow](docs/git-workflow.md) and [quick reference](docs/quick-reference.md) for feature branches, pull requests, visual tools, and safe recovery. Maintainers should configure the protected-branch settings in [repository administration](docs/repository-administration.md).
 
 ## Repository Rules Test
+I am the robot
