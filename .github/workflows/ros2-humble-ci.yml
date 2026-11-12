@@ -29,7 +29,9 @@ jobs:
         run: |
           apt-get update
           apt-get install -y python3-colcon-common-extensions python3-rosdep
-          rosdep init
+          if [ ! -f /etc/ros/rosdep/sources.list.d/20-default.list ]; then
+            rosdep init
+          fi
           rosdep update
           . /opt/ros/humble/setup.sh
           rosdep install --from-paths /tmp/amr_tec_1_ws/src --ignore-src --rosdistro humble -r -y
