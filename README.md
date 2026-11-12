@@ -29,3 +29,7 @@ colcon test-result --verbose
 Build or test a single package with `colcon build --packages-select <package>` or `colcon test --packages-select <package>`.
 
 The packages are currently structural scaffolds. Add a dependency to both a package's `package.xml` and `CMakeLists.txt` when implementing a node, plugin, interface, or launch integration.
+
+## Platform compatibility
+
+The Jetson deployment target uses ROS 2 Humble, while development hosts may use ROS 2 Jazzy. Follow the [development-environment guide](docs/development-environments.md) for the compatibility policy, pinned external source import, released sensor/localization dependencies, and validation matrix.

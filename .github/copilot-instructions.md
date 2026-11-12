@@ -44,6 +44,8 @@ The packages install their shareable asset directories but remain implementation
 
 ## Package conventions
 
+- Treat ROS 2 Humble on the Jetson Orin Nano as the production compatibility target. ROS 2 Jazzy on Ubuntu 24.04 is a separate development/simulation environment; do not mix their shells or colcon build/install/log directories. See `docs/development-environments.md`.
+- Keep source-only third-party pins in `dependencies.repos`. Use released ROS packages via `rosdep`/APT rather than cloning duplicate source stacks; create distro-specific manifests only when an upstream source cannot support both Humble and Jazzy.
 - Update the root `README.md` as the workspace gains implemented packages, dependencies, build steps, or operational workflows so it reflects the repository's current state.
 - Keep each package as `ament_cmake` (package format 3) and preserve its package name in both `project(...)` and `<name>`.
 - Use `.gitkeep` files to retain intentionally empty asset directories; do not use `COLCON_IGNORE` inside a package, because it prevents colcon from discovering that directory.
