@@ -3,7 +3,7 @@
 <package format="3">
   <name>amr_interfaces</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>Custom messages, services, and actions shared by AMR Tec 1 packages.</description>
   <maintainer email="dasc14@gmail.com">daniel</maintainer>
   <license>Apache-2.0</license>
 

@@ -3,7 +3,7 @@
 <package format="3">
   <name>amr_bringup</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>Top-level launch and deployment configuration for AMR Tec 1.</description>
   <maintainer email="dasc14@gmail.com">daniel</maintainer>
   <license>Apache-2.0</license>
 
