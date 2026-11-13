@@ -42,5 +42,10 @@ Use the beginner-safe [Git workflow](docs/git-workflow.md) and [quick reference]
 
 
 
-
+## Contributor ##
 xXxRataCuco-67xXx
+## Contributor
+Beca
+## Contributor ##
+
+JoseGuerrero67
