@@ -7,6 +7,7 @@ from launch.substitutions import Command, LaunchConfiguration, PythonExpression
 import os
 from ament_index_python.packages import get_package_share_path
 
+
 def generate_launch_description():
 
     use_sim_time = LaunchConfiguration('use_sim_time')
@@ -16,7 +17,7 @@ def generate_launch_description():
 
     urdf_path = os.path.join(get_package_share_path('amr_description'),
                              'urdf', 'amr.urdf')
-    
+
     rviz_config_path = os.path.join(get_package_share_path('amr_description'),
                                     'rviz', 'display_config.rviz')
 
@@ -32,14 +33,15 @@ def generate_launch_description():
     robot_state_publisher_node = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
-        parameters=[{'robot_description':robot_description, 'use_sim_time': use_sim_time}]
+        parameters=[{'robot_description': robot_description, 'use_sim_time': use_sim_time}]
     )
 
     joint_state_publisher_gui_node = Node(
         package="joint_state_publisher_gui",
         executable="joint_state_publisher_gui",
         condition=IfCondition(
-            PythonExpression(["'", use_jsp_gui, "' == 'true' and '", use_ros_control, "' == 'false'"])
+            PythonExpression(
+                ["'", use_jsp_gui, "' == 'true' and '", use_ros_control, "' == 'false'"])
         ),
     )
 
@@ -51,8 +53,8 @@ def generate_launch_description():
 
     return LaunchDescription([
         DeclareLaunchArgument(
-            'use_sim_time', 
-            default_value='false', 
+            'use_sim_time',
+            default_value='false',
             description='Use simulation (Gazebo) clock if true'
         ),
         DeclareLaunchArgument(
