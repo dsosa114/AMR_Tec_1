@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="RTK_Temu.SLDPRT">
+  <link
+    name="Chasis_link">
+    <inertial>
+      <origin
+        xyz="-0.0222986727626558 -0.103538876994477 0.130202562302216"
+        rpy="0 0 0" />
+      <mass
+        value="30.2192194697933" />
+      <inertia
+        ixx="1.1404114097681"
+        ixy="0.0547930702310783"
+        ixz="0.0201944026363161"
+        iyy="0.409771420291759"
+        iyz="-0.0194016060635621"
+        izz="1.45153548756467" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RTK_Temu.SLDPRT/meshes/Chasis_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.894117647058823 0.894117647058823 0.894117647058823 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RTK_Temu.SLDPRT/meshes/Chasis_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="front_right_wheel_link">
+    <inertial>
+      <origin
+        xyz="-0.00566401631473373 9.90724435080415E-05 -0.000271963367299288"
+        rpy="0 0 0" />
+      <mass
+        value="6.69183973985027" />
+      <inertia
+        ixx="0.357347212224778"
+        ixy="-1.07740917030233E-07"
+        ixz="4.64182261268584E-05"
+        iyy="0.204903978015561"
+        iyz="4.80243600331509E-06"
+        izz="0.204920649676514" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RTK_Temu.SLDPRT/meshes/front_right_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.894117647058823 0.894117647058823 0.894117647058823 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RTK_Temu.SLDPRT/meshes/front_right_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.49047 0.7137 0.045273"
+      rpy="0 0.00030616 0" />
+    <parent
+      link="Chasis_link" />
+    <child
+      link="front_right_wheel_link" />
+    <axis
+      xyz="-1 0 -0.00030616" />
+    <dynamics
+      damping="0.5"
+      friction="1" />
+  </joint>
+  <link
+    name="front_left_wheel_link">
+    <inertial>
+      <origin
+        xyz="0.00566402902001811 0.000174876625691156 0.000230333408740846"
+        rpy="0 0 0" />
+      <mass
+        value="6.69183974290597" />
+      <inertia
+        ixx="0.357347211995644"
+        ixy="2.73805309929157E-08"
+        ixz="4.63975052563284E-05"
+        iyy="0.204902723124111"
+        iyz="7.69970830090359E-07"
+        izz="0.204921904315497" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RTK_Temu.SLDPRT/meshes/front_left_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.894117647058823 0.894117647058823 0.894117647058823 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RTK_Temu.SLDPRT/meshes/front_left_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.48953 0.71363 0.044772"
+      rpy="0 0.00030616 0" />
+    <parent
+      link="Chasis_link" />
+    <child
+      link="front_left_wheel_link" />
+    <axis
+      xyz="1 0 0.00030616" />
+    <dynamics
+      damping="0.5"
+      friction="1" />
+  </joint>
+  <link
+    name="rear_right_wheel_link">
+    <inertial>
+      <origin
+        xyz="-0.00566416893167465 -0.000175443022534916 0.000226429859826904"
+        rpy="0 0 0" />
+      <mass
+        value="6.69183959859615" />
+      <inertia
+        ixx="0.357347210530256"
+        ixy="2.71918139990335E-08"
+        ixz="4.69355611226319E-05"
+        iyy="0.204902726766514"
+        iyz="-8.1768483672708E-07"
+        izz="0.204921899865492" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RTK_Temu.SLDPRT/meshes/rear_right_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.894117647058823 0.894117647058823 0.894117647058823 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RTK_Temu.SLDPRT/meshes/rear_right_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.44847 -0.686 0.038273"
+      rpy="0 0.00030616 0" />
+    <parent
+      link="Chasis_link" />
+    <child
+      link="rear_right_wheel_link" />
+    <axis
+      xyz="-1 0 -0.00030616" />
+    <dynamics
+      damping="0.5"
+      friction="1" />
+  </joint>
+  <link
+    name="rear_left_wheel_link">
+    <inertial>
+      <origin
+        xyz="0.00566398917654387 0.000167290260409625 0.000236661415633888"
+        rpy="0 0 0" />
+      <mass
+        value="6.69183133120593" />
+      <inertia
+        ixx="0.357347200837873"
+        ixy="3.34915201437461E-08"
+        ixz="4.63916616915813E-05"
+        iyy="0.20490267191407"
+        iyz="1.3681642636337E-07"
+        izz="0.204921942432232" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RTK_Temu.SLDPRT/meshes/rear_left_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.894117647058823 0.894117647058823 0.894117647058823 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RTK_Temu.SLDPRT/meshes/rear_left_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.44753 -0.68637 0.038266"
+      rpy="0 0.00030616 0" />
+    <parent
+      link="Chasis_link" />
+    <child
+      link="rear_left_wheel_link" />
+    <axis
+      xyz="1 0 0.00030616" />
+    <dynamics
+      damping="0.5"
+      friction="1" />
+  </joint>
+  <link
+    name="Imu_link">
+    <inertial>
+      <origin
+        xyz="-0.000416200824923964 8.95467721959697E-05 -0.000586751245583366"
+        rpy="0 0 0" />
+      <mass
+        value="0.00098313018365204" />
+      <inertia
+        ixx="2.72780814792229E-08"
+        ixy="1.86463715352667E-11"
+        ixz="-1.83135757569235E-11"
+        iyy="4.80453464098758E-08"
+        iyz="-1.81575171892398E-12"
+        izz="7.48563776021965E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RTK_Temu.SLDPRT/meshes/Imu_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.894117647058823 0.894117647058823 0.894117647058823 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RTK_Temu.SLDPRT/meshes/Imu_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Imu_joint"
+    type="fixed">
+    <origin
+      xyz="0.00070051 0.74389 0.36865"
+      rpy="0 0 0" />
+    <parent
+      link="Chasis_link" />
+    <child
+      link="Imu_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Lidar-link">
+    <inertial>
+      <origin
+        xyz="-3.28690208511073E-06 -0.000102129182461219 -0.00210332287127607"
+        rpy="0 0 0" />
+      <mass
+        value="0.605610172285068" />
+      <inertia
+        ixx="0.000670924675018133"
+        ixy="1.75257333255553E-11"
+        ixz="-6.6763716542643E-08"
+        iyy="0.000667040712181602"
+        iyz="-1.8128946176005E-06"
+        izz="0.000804073841920665" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RTK_Temu.SLDPRT/meshes/Lidar-link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.894117647058823 0.894117647058823 0.894117647058823 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RTK_Temu.SLDPRT/meshes/Lidar-link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lidar_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0011917 0.84916 0.67618"
+      rpy="0 0.00030616 0" />
+    <parent
+      link="Chasis_link" />
+    <child
+      link="Lidar-link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="ZED_link">
+    <inertial>
+      <origin
+        xyz="4.01008458317514E-07 0.000992634620824995 -0.00109846133983421"
+        rpy="0 0 0" />
+      <mass
+        value="0.170322699192855" />
+      <inertia
+        ixx="3.25740976915344E-05"
+        ixy="-3.48012487305273E-09"
+        ixz="-7.84819532822551E-10"
+        iyy="0.000383152093335362"
+        iyz="1.25165691846446E-06"
+        izz="0.000390407240953197" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RTK_Temu.SLDPRT/meshes/ZED_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.894117647058823 0.894117647058823 0.894117647058823 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RTK_Temu.SLDPRT/meshes/ZED_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ZED_joint"
+    type="fixed">
+    <origin
+      xyz="0.0028913 0.96093 0.633"
+      rpy="0 0.00030616 0" />
+    <parent
+      link="Chasis_link" />
+    <child
+      link="ZED_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RTK_link">
+    <inertial>
+      <origin
+        xyz="-6.21704556298401E-05 -4.01408025252348E-06 9.84372148865598E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0350564949343592" />
+      <inertia
+        ixx="1.32966912963313E-05"
+        ixy="-2.4850045235485E-07"
+        ixz="2.51600692375413E-08"
+        iyy="8.28243023213713E-06"
+        iyz="1.60097268930069E-09"
+        izz="2.09515010390878E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RTK_Temu.SLDPRT/meshes/RTK_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.894117647058823 0.894117647058823 0.894117647058823 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RTK_Temu.SLDPRT/meshes/RTK_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RTK_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0014412 0.8515 0.7225"
+      rpy="0 0.00030616 0" />
+    <parent
+      link="Chasis_link" />
+    <child
+      link="RTK_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
