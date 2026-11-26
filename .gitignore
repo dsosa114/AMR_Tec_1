@@ -6,7 +6,7 @@
 /log/
 
 # VS Code C/C++ database files
-.vscode/*vc.db*
+.vscode/*vc.*
 
 # CMake build artifacts
 CMakeCache.txt
