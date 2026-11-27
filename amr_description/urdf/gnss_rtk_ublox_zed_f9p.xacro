@@ -44,8 +44,8 @@
     name="RTK_joint"
     type="fixed">
     <origin
-      xyz="-0.0014412 0.8515 0.7225"
-      rpy="0 0.00030616 0" />
+      xyz="0.8515 0.0014412 0.7225"
+      rpy="0 0.00030616 ${-pi/2}" />
     <parent
       link="base_link" />
     <child

@@ -1,12 +1,22 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Null inertial element. This is needed to make the model work with
+         Gazebo. -->
+  <xacro:macro name="null_inertial">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.001"/>
+      <inertia ixx="0.000001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.000001"/>
+    </inertial>
+  </xacro:macro>
+
   <link name="base_footprint"/>
   <link
     name="base_link">
     <inertial>
       <origin
-        xyz="-0.0222986727626558 -0.103538876994477 0.130202562302216"
-        rpy="0 0 0" />
+        xyz="-0.103538876994477 0.0222986727626558  0.130202562302216"
+        rpy="0 0 ${-pi/2}" />
       <mass
         value="30.2192194697933" />
       <inertia
@@ -20,7 +30,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 0 ${-pi/2}" />
       <geometry>
         <mesh
           filename="package://amr_description/meshes/Chasis_link.STL" />
@@ -34,7 +44,7 @@
     <collision>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 0 ${-pi/2}" />
       <geometry>
         <mesh
           filename="package://amr_description/meshes/Chasis_link.STL" />
@@ -47,6 +57,30 @@
     <origin xyz="0.0 0.0 0.25" rpy="0.0 0.0 0.0"/>
   </joint>
   
+  <link name="right_steering_link">
+    <xacro:null_inertial/>
+  </link>
+
+  <joint name="right_front_position_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_steering_link"/>
+    <origin
+      xyz="0.7137 -0.49047 0.045273"
+      rpy="0 0.00030616 ${-pi/2}" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  <joint name="front_right_steering_joint" type="revolute">
+    <parent link="right_steering_link"/>
+    <child link="front_right_axle_carrier"/>
+    <axis xyz = "0 0 1"/>
+    <limit lower="-0.523599" upper="0.523599" effort="0.5649" velocity="4.553"/>
+    <!-- <limit lower="-0.3" upper="0.3" effort="0.5649" velocity="4.553"/> -->
+  </joint>
+  <link name="front_right_axle_carrier">
+    <xacro:null_inertial/>
+  </link>
+
   <link
     name="front_right_wheel_link">
     <inertial>
@@ -90,11 +124,11 @@
   <joint
     name="front_right_wheel_joint"
     type="continuous">
-    <origin
-      xyz="0.49047 0.7137 0.045273"
-      rpy="0 0.00030616 0" />
+    <!-- <origin
+      xyz="0.7137 -0.49047 0.045273"
+      rpy="0 0.00030616 ${-pi/2}" /> -->
     <parent
-      link="base_link" />
+      link="front_right_axle_carrier" />
     <child
       link="front_right_wheel_link" />
     <axis
@@ -103,6 +137,30 @@
       damping="0.5"
       friction="1" />
   </joint>
+
+  <link name="left_steering_link">
+    <xacro:null_inertial/>
+  </link>
+
+  <joint name="left_front_position_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_steering_link"/>
+    <origin
+      xyz="0.71363 0.48953 0.044772"
+      rpy="0 0.00030616 ${-pi/2}" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  <joint name="front_left_steering_joint" type="revolute">
+    <parent link="left_steering_link"/>
+    <child link="front_left_axle_carrier"/>
+    <axis xyz = "0 0 1"/>
+    <limit lower="-0.523599" upper="0.523599" effort="0.5649" velocity="4.553"/>
+    <!-- <limit lower="-0.3" upper="0.3" effort="0.5649" velocity="4.553"/> -->
+  </joint>
+  <link name="front_left_axle_carrier">
+    <xacro:null_inertial/>
+  </link>
   <link
     name="front_left_wheel_link">
     <inertial>
@@ -146,11 +204,11 @@
   <joint
     name="front_left_wheel_joint"
     type="continuous">
-    <origin
+    <!-- <origin
       xyz="-0.48953 0.71363 0.044772"
-      rpy="0 0.00030616 0" />
+      rpy="0 0.00030616 0" /> -->
     <parent
-      link="base_link" />
+      link="front_left_axle_carrier" />
     <child
       link="front_left_wheel_link" />
     <axis
@@ -203,8 +261,8 @@
     name="rear_right_wheel_joint"
     type="continuous">
     <origin
-      xyz="0.44847 -0.686 0.038273"
-      rpy="0 0.00030616 0" />
+      xyz="-0.686 -0.44847 0.038273"
+      rpy="0 0.00030616 ${pi/2}" />
     <parent
       link="base_link" />
     <child
@@ -259,8 +317,8 @@
     name="rear_left_wheel_joint"
     type="continuous">
     <origin
-      xyz="-0.44753 -0.68637 0.038266"
-      rpy="0 0.00030616 0" />
+      xyz="-0.68637 0.44753 0.038266"
+      rpy="0 0.00030616 ${pi/2}" />
     <parent
       link="base_link" />
     <child

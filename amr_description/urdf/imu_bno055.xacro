@@ -44,7 +44,7 @@
     name="Imu_joint"
     type="fixed">
     <origin
-      xyz="0.00070051 0.74389 0.36865"
+      xyz="-0.74389 -0.00070051  0.36865"
       rpy="0 0 0" />
     <parent
       link="base_link" />
