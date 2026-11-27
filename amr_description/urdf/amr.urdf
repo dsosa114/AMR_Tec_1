@@ -46,6 +46,11 @@
       </geometry>
     </collision>
   </link>
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0.0 0.0 0.25" rpy="0.0 0.0 0.0"/>
+  </joint>
   <link
     name="front_right_wheel_link">
     <inertial>

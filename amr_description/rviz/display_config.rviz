@@ -63,15 +63,25 @@ Visualization Manager:
           Value: true
         ZED_link:
           Value: true
+        base_footprint:
+          Value: true
         base_link:
+          Value: true
+        front_left_axle_carrier:
           Value: true
         front_left_wheel_link:
           Value: true
+        front_right_axle_carrier:
+          Value: true
         front_right_wheel_link:
+          Value: true
+        left_steering_link:
           Value: true
         rear_left_wheel_link:
           Value: true
         rear_right_wheel_link:
+          Value: true
+        right_steering_link:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -79,23 +89,28 @@ Visualization Manager:
       Show Axes: true
       Show Names: false
       Tree:
-        base_link:
-          Imu_link:
-            {}
-          Lidar-link:
-            {}
-          RTK_link:
-            {}
-          ZED_link:
-            {}
-          front_left_wheel_link:
-            {}
-          front_right_wheel_link:
-            {}
-          rear_left_wheel_link:
-            {}
-          rear_right_wheel_link:
-            {}
+        base_footprint:
+          base_link:
+            Imu_link:
+              {}
+            Lidar-link:
+              {}
+            RTK_link:
+              {}
+            ZED_link:
+              {}
+            left_steering_link:
+              front_left_axle_carrier:
+                front_left_wheel_link:
+                  {}
+            rear_left_wheel_link:
+              {}
+            rear_right_wheel_link:
+              {}
+            right_steering_link:
+              front_right_axle_carrier:
+                front_right_wheel_link:
+                  {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -124,6 +139,7 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         Link Tree Style: Links in Alphabetic Order
         RTK_link:
           Alpha: 1
@@ -134,21 +150,38 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
+        base_footprint:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
+        front_left_axle_carrier:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         front_left_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
+        front_right_axle_carrier:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         front_right_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
+        left_steering_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         rear_left_wheel_link:
           Alpha: 1
           Show Axes: false
@@ -159,6 +192,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        right_steering_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
       Mass Properties:
         Inertia: false
         Mass: false
@@ -170,7 +207,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: base_link
+    Fixed Frame: base_footprint
     Frame Rate: 30
   Name: root
   Tools:
@@ -213,7 +250,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 3.4338955879211426
+      Distance: 4.0061445236206055
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -228,10 +265,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3153984546661377
+      Pitch: 0.620398223400116
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.2553985118865967
+      Yaw: 0.5004183053970337
     Saved: ~
 Window Geometry:
   Displays:

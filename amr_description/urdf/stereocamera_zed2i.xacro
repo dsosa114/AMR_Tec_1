@@ -44,8 +44,8 @@
     name="ZED_joint"
     type="fixed">
     <origin
-      xyz="0.0028913 0.96093 0.633"
-      rpy="0 0.00030616 0" />
+      xyz="0.96093 -0.0028913 0.633"
+      rpy="0 0.00030616 ${-pi/2}" />
     <parent
       link="base_link" />
     <child

@@ -16,7 +16,7 @@ def generate_launch_description():
     use_mock_system = LaunchConfiguration('use_mock_system')
 
     urdf_path = os.path.join(get_package_share_path('amr_description'),
-                             'urdf', 'amr.urdf')
+                             'urdf', 'amr.urdf.xacro')
 
     rviz_config_path = os.path.join(get_package_share_path('amr_description'),
                                     'rviz', 'display_config.rviz')

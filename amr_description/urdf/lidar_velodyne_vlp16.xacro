@@ -44,8 +44,8 @@
     name="Lidar_joint"
     type="fixed">
     <origin
-      xyz="-0.0011917 0.84916 0.67618"
-      rpy="0 0.00030616 0" />
+      xyz="0.84916 0.0011917 0.67618"
+      rpy="0 0.00030616 ${-pi/2}" />
     <parent
       link="base_link" />
     <child
