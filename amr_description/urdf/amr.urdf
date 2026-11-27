@@ -2,10 +2,12 @@
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<!-- This URDF is kept as legacy and will be deleted in further versions of this package. Please refer to amr.urdf.xacro -->
 <robot
-  name="RTK_Temu.SLDPRT">
+  name="amr_tec_1">
+  <link name="base_footprint"/>
   <link
-    name="Chasis_link">
+    name="base_link">
     <inertial>
       <origin
         xyz="-0.0222986727626558 -0.103538876994477 0.130202562302216"
@@ -26,10 +28,10 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://RTK_Temu.SLDPRT/meshes/Chasis_link.STL" />
+          filename="package://amr_description/meshes/Chasis_link.STL" />
       </geometry>
       <material
-        name="">
+        name="base_color">
         <color
           rgba="0.894117647058823 0.894117647058823 0.894117647058823 1" />
       </material>
@@ -40,7 +42,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://RTK_Temu.SLDPRT/meshes/Chasis_link.STL" />
+          filename="package://amr_description/meshes/Chasis_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -66,10 +68,10 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://RTK_Temu.SLDPRT/meshes/front_right_wheel_link.STL" />
+          filename="package://amr_description/meshes/front_right_wheel_link.STL" />
       </geometry>
       <material
-        name="">
+        name="wheel_color">
         <color
           rgba="0.894117647058823 0.894117647058823 0.894117647058823 1" />
       </material>
@@ -80,7 +82,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://RTK_Temu.SLDPRT/meshes/front_right_wheel_link.STL" />
+          filename="package://amr_description/meshes/front_right_wheel_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -91,7 +93,7 @@
       xyz="0.49047 0.7137 0.045273"
       rpy="0 0.00030616 0" />
     <parent
-      link="Chasis_link" />
+      link="base_link" />
     <child
       link="front_right_wheel_link" />
     <axis
@@ -122,10 +124,10 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://RTK_Temu.SLDPRT/meshes/front_left_wheel_link.STL" />
+          filename="package://amr_description/meshes/front_left_wheel_link.STL" />
       </geometry>
       <material
-        name="">
+        name="wheel_color">
         <color
           rgba="0.894117647058823 0.894117647058823 0.894117647058823 1" />
       </material>
@@ -136,7 +138,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://RTK_Temu.SLDPRT/meshes/front_left_wheel_link.STL" />
+          filename="package://amr_description/meshes/front_left_wheel_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -147,7 +149,7 @@
       xyz="-0.48953 0.71363 0.044772"
       rpy="0 0.00030616 0" />
     <parent
-      link="Chasis_link" />
+      link="base_link" />
     <child
       link="front_left_wheel_link" />
     <axis
@@ -178,10 +180,10 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://RTK_Temu.SLDPRT/meshes/rear_right_wheel_link.STL" />
+          filename="package://amr_description/meshes/rear_right_wheel_link.STL" />
       </geometry>
       <material
-        name="">
+        name="wheel_color">
         <color
           rgba="0.894117647058823 0.894117647058823 0.894117647058823 1" />
       </material>
@@ -192,7 +194,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://RTK_Temu.SLDPRT/meshes/rear_right_wheel_link.STL" />
+          filename="package://amr_description/meshes/rear_right_wheel_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -203,7 +205,7 @@
       xyz="0.44847 -0.686 0.038273"
       rpy="0 0.00030616 0" />
     <parent
-      link="Chasis_link" />
+      link="base_link" />
     <child
       link="rear_right_wheel_link" />
     <axis
@@ -234,10 +236,10 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://RTK_Temu.SLDPRT/meshes/rear_left_wheel_link.STL" />
+          filename="package://amr_description/meshes/rear_left_wheel_link.STL" />
       </geometry>
       <material
-        name="">
+        name="wheel_color">
         <color
           rgba="0.894117647058823 0.894117647058823 0.894117647058823 1" />
       </material>
@@ -248,7 +250,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://RTK_Temu.SLDPRT/meshes/rear_left_wheel_link.STL" />
+          filename="package://amr_description/meshes/rear_left_wheel_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -259,7 +261,7 @@
       xyz="-0.44753 -0.68637 0.038266"
       rpy="0 0.00030616 0" />
     <parent
-      link="Chasis_link" />
+      link="base_link" />
     <child
       link="rear_left_wheel_link" />
     <axis
@@ -290,7 +292,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://RTK_Temu.SLDPRT/meshes/Imu_link.STL" />
+          filename="package://amr_description/meshes/Imu_link.STL" />
       </geometry>
       <material
         name="">
@@ -304,7 +306,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://RTK_Temu.SLDPRT/meshes/Imu_link.STL" />
+          filename="package://amr_description/meshes/Imu_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -315,7 +317,7 @@
       xyz="0.00070051 0.74389 0.36865"
       rpy="0 0 0" />
     <parent
-      link="Chasis_link" />
+      link="base_link" />
     <child
       link="Imu_link" />
     <axis
@@ -337,13 +339,15 @@
         iyz="-1.8128946176005E-06"
         izz="0.000804073841920665" />
     </inertial>
-    <visual>
+    <!-- Comente el siguiente bloque de código porque la malla de visual y colisión ya están incluidas en el archivo Chasis_link.STL.
+         Hay que corregir la malla. -->
+    <!-- <visual>
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://RTK_Temu.SLDPRT/meshes/Lidar-link.STL" />
+          filename="package://amr_description/meshes/Lidar-link.STL" />
       </geometry>
       <material
         name="">
@@ -357,9 +361,9 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://RTK_Temu.SLDPRT/meshes/Lidar-link.STL" />
+          filename="package://amr_description/meshes/Lidar-link.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
   <joint
     name="Lidar_joint"
@@ -368,7 +372,7 @@
       xyz="-0.0011917 0.84916 0.67618"
       rpy="0 0.00030616 0" />
     <parent
-      link="Chasis_link" />
+      link="base_link" />
     <child
       link="Lidar-link" />
     <axis
@@ -390,13 +394,15 @@
         iyz="1.25165691846446E-06"
         izz="0.000390407240953197" />
     </inertial>
-    <visual>
+    <!-- Comente el siguiente bloque de código porque la malla de visual y colisión ya están incluidas en el archivo Chasis_link.STL.
+         Hay que corregir la malla. -->
+    <!-- <visual>
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://RTK_Temu.SLDPRT/meshes/ZED_link.STL" />
+          filename="package://amr_description/meshes/ZED_link.STL" />
       </geometry>
       <material
         name="">
@@ -410,9 +416,9 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://RTK_Temu.SLDPRT/meshes/ZED_link.STL" />
+          filename="package://amr_description/meshes/ZED_link.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
   <joint
     name="ZED_joint"
@@ -421,7 +427,7 @@
       xyz="0.0028913 0.96093 0.633"
       rpy="0 0.00030616 0" />
     <parent
-      link="Chasis_link" />
+      link="base_link" />
     <child
       link="ZED_link" />
     <axis
@@ -449,7 +455,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://RTK_Temu.SLDPRT/meshes/RTK_link.STL" />
+          filename="package://amr_description/meshes/RTK_link.STL" />
       </geometry>
       <material
         name="">
@@ -463,7 +469,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://RTK_Temu.SLDPRT/meshes/RTK_link.STL" />
+          filename="package://amr_description/meshes/RTK_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -474,7 +480,7 @@
       xyz="-0.0014412 0.8515 0.7225"
       rpy="0 0.00030616 0" />
     <parent
-      link="Chasis_link" />
+      link="base_link" />
     <child
       link="RTK_link" />
     <axis
